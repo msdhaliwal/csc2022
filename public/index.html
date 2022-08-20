@@ -4,26 +4,47 @@
 		<meta charset="UTF-8" />
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>X</title>
+		<title>Consulate waiting time</title>
+		<link rel="stylesheet" href="https://necolas.github.io/normalize.css/8.0.1/normalize.css" />
+		<link rel="stylesheet" href="style.css" />
 	</head>
 	<body>
-		<!--  -->
-		<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-		<script>
-			//
-
-			const xhr = new XMLHttpRequest();
-			xhr.onreadystatechange = function () {
-				if (this.readyState == 4 && this.status == 200) {
-					let response = JSON.parse(xhr.response);
-					// let xyz = eval(response);
-					// const codes = window.travelStateGov && window.travelStateGov.PostsVWT && window.travelStateGov.PostsVWT.sourceData ? window.travelStateGov.PostsVWT.sourceData : [];
-					console.log(response);
-				}
-			};
-			xhr.open('GET', `/api/response-time`, 'true');
-			xhr.setRequestHeader('content-type', 'application/json');
-			xhr.send();
-		</script>
+		<div id="wrapper">
+			<!-- nav bar -->
+			<header>
+				<div class="left">
+					<span class="logo logo-gradient">msdhaliwal</span>
+					<span class="tagline">Bringing ideas to life</span>
+				</div>
+				<div class="center">Consulate Waiting Times</div>
+				<div class="right">
+					<input type="text" name="" id="searchBox" placeholder="search..." readonly />
+				</div>
+			</header>
+			<!-- table -->
+			<main>
+				<table id="dataTable" border="0">
+					<thead>
+						<th>Sr no</th>
+						<th>Name</th>
+						<th>Time 1</th>
+						<th>Time 2</th>
+						<th>Time 3</th>
+					</thead>
+					<tbody id="tBody">
+						<!-- <tr>
+							<td>1</td>
+							<td>City 1</td>
+							<td>14 days</td>
+							<td>15 days</td>
+							<td>15 days</td>
+						</tr> -->
+					</tbody>
+				</table>
+			</main>
+			<!-- footer -->
+			<footer>made with <span class="color-red">&hearts;</span> by <a class="logo-gradient" target="_blank" href="https://github.com/msdhaliwal">msdhaliwal</a></footer>
+		</div>
+		<script src="./script.js"></script>
 	</body>
 </html>

@@ -1,0 +1,141 @@
+@import url('https://fonts.googleapis.com/css2?family=DynaPuff&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap');
+/*  */
+::placeholder {
+	user-select: none;
+}
+/*  */
+#wrapper {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+	background-color: #1c1c1c;
+	color: #cccccc;
+	min-height: 100vh;
+	width: 100%;
+}
+.logo-gradient {
+	background: -webkit-linear-gradient(#eff54d, #00ac61);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	user-select: none;
+}
+
+/* header styles */
+header {
+	display: grid;
+	grid-template-columns: 190px 1fr 190px;
+	font-family: 'DynaPuff', cursive;
+	position: sticky;
+	top: 0;
+	background-color: #1c1c1c;
+}
+header > * {
+	padding: 0 8px;
+}
+header .left {
+	text-align: left;
+	display: flex;
+	flex-flow: column;
+}
+header .left > span {
+	text-align: center;
+}
+header .left > span.logo {
+	font-size: 24px;
+	height: 30px;
+	line-height: 30px;
+}
+header .left > span.tagline {
+	font-size: 13px;
+	height: 20px;
+	line-height: 20px;
+}
+header .center {
+	line-height: 50px;
+	text-align: center;
+	font-size: 16px;
+}
+header .right {
+	text-align: right;
+}
+header .right input {
+	height: 24px;
+	line-height: 30px;
+	padding: 0;
+	margin: 10px;
+	border: 0;
+	outline: 0;
+	border-radius: 8px;
+	background-color: #242b2e;
+	border: 1px solid #cccccc;
+	color: #cccccc;
+	padding: 4px 8px;
+	box-sizing: border-box;
+	width: 150px;
+}
+
+/* footer styles */
+footer {
+	font-family: 'Permanent Marker', cursive;
+	line-height: 50px;
+	text-align: center;
+}
+
+footer a {
+	text-decoration: underline;
+	color: #ffffff;
+	font-family: 'DynaPuff', cursive;
+}
+.color-red {
+	color: #ff0000;
+}
+/*  */
+footer::selection,
+footer *::selection,
+header *::selection,
+main::selection,
+main *::selection {
+	color: #1c1c1c;
+	background-color: #cccccc;
+}
+
+/*  table styles */
+main {
+	padding: 16px 16px 16px 24px;
+	box-sizing: border-box;
+	/* height: calc(100vh - 101px); */
+	overflow: hidden;
+}
+#dataTable {
+	font-family: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+	width: 100%;
+	/* height: calc(100vh - 133px); */
+	overflow: hidden;
+	border-spacing: 0;
+}
+
+#dataTable thead {
+	height: 30px;
+}
+
+#tBody {
+	/* max-height: calc(100vh - 163px); */
+	overflow: scroll;
+}
+
+th,
+td {
+	text-align: left;
+}
+
+thead tr {
+	background-color: #2b2b2b;
+}
+
+tr:nth-child(even) {
+	background-color: #2b2b2b;
+}
+tr td {
+	padding: 4px;
+}
