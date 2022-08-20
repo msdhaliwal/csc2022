@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>X</title>
+	</head>
+	<body>
+		<!--  -->
+		<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+		<script>
+			//
+
+			const xhr = new XMLHttpRequest();
+			xhr.onreadystatechange = function () {
+				if (this.readyState == 4 && this.status == 200) {
+					let response = JSON.parse(xhr.response);
+					// let xyz = eval(response);
+					// const codes = window.travelStateGov && window.travelStateGov.PostsVWT && window.travelStateGov.PostsVWT.sourceData ? window.travelStateGov.PostsVWT.sourceData : [];
+					console.log(response);
+				}
+			};
+			xhr.open('GET', `/api/response-time`, 'true');
+			xhr.setRequestHeader('content-type', 'application/json');
+			xhr.send();
+		</script>
+	</body>
+</html>

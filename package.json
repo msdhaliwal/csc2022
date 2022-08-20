@@ -1,0 +1,24 @@
+{
+	"name": "summer-challenge-2022",
+	"version": "0.0.1",
+	"description": "",
+	"main": "index.js",
+	"scripts": {
+		"start": "node server",
+		"dev": "nodemon server",
+		"format": "prettier --write ."
+	},
+	"keywords": [],
+	"author": "msdhaliwal",
+	"license": "MIT",
+	"devDependencies": {
+		"nodemon": "^2.0.19",
+		"prettier": "^2.7.1"
+	},
+	"dependencies": {
+		"@seald-io/nedb": "^3.0.0",
+		"express": "^4.18.1",
+		"jquery": "^3.6.0",
+		"xmlhttprequest": "^1.8.0"
+	}
+}
