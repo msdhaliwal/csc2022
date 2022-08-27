@@ -2,7 +2,34 @@ const tBody = document.querySelector('#tBody');
 const searchBox = document.querySelector('#searchBox');
 
 const search = (arr, searchKey) => arr.filter((obj) => Object.keys(obj).some((key) => String(obj[key].toLowerCase()).includes(String(searchKey).toLowerCase())));
-// const search = objects.filter(item => `${item.foo} ${item.bar}`.includes(query));
+
+const sort = (data, sort_type = 'default') => {
+	// fixme: code breaks when it encounters non Numeric value, in this case Emergency, Temporarily closed OR Closed
+	let sortedData;
+	switch (sort_type.trim().toLowerCase()) {
+		// by name
+		case 'default':
+		case 'name_asc':
+			return data.sort((a, b) => a.value.localeCompare(b.value));
+		case 'name_desc':
+			return data.sort((a, b) => b.value.localeCompare(a.value));
+		// by time 1
+		case 'time1_asc':
+			return data.sort((a, b) => a.time1 - b.time1);
+		case 'time1_desc':
+			return data.sort((a, b) => b.time1 - a.time1);
+		// by time 2
+		case 'time2_asc':
+			return data.sort((a, b) => a.time2 - b.time2);
+		case 'time2_desc':
+			return data.sort((a, b) => b.time2 - a.time2);
+		// by time 3
+		case 'time3_asc':
+			return data.sort((a, b) => a.time3 - b.time3);
+		case 'time3_desc':
+			return data.sort((a, b) => b.time3 - a.time3);
+	}
+};
 
 const GetWaitingTime = (cb) => {
 	try {
@@ -28,7 +55,8 @@ const PopulateTable = (data) => {
 	}
 	tBody.innerHTML = '';
 	let index = 1;
-	for (const row of data) {
+	let _data = sort(data, 'time1_asc');
+	for (const row of _data) {
 		const elem = TableRow(row, index);
 		tBody.appendChild(elem);
 		index++;
