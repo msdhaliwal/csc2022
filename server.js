@@ -101,7 +101,10 @@ const _getResponseTime = ({ code, value }) => {
 			xhr.onreadystatechange = function () {
 				if (this.readyState == 4 && this.status == 200) {
 					// console.log(xhr.response);
-					const [time1, time2, time3] = xhr.responseText.trim().split(',');
+					let [time1, time2, time3] = xhr.responseText.trim().split(',');
+					time1 = !Number.isNaN(Number(time1.split(' ')[0])) ? time1.split(' ')[0] : time1;
+					time2 = !Number.isNaN(Number(time2.split(' ')[0])) ? time2.split(' ')[0] : time2;
+					time3 = !Number.isNaN(Number(time3.split(' ')[0])) ? time3.split(' ')[0] : time3;
 					resolve({ code, value, time1, time2, time3 });
 				}
 			};
