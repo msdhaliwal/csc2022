@@ -15,3 +15,14 @@ P83&aid=VisaWaitTimesHomePage this API gives you waiting times for each consulat
 
 ### Notes:
 - repeating twice {"code":"P142","value":"N Djamena"}
+
+# Live google sheet link
+https://docs.google.com/spreadsheets/d/1-HC1BQYyXGDnpgc7cVXpTXVh09D-9mQlMD41IRvJC7s/edit#gid=0
+
+APIs
+/api/response-time | raw data
+/api/sheets/update | update google sheet with live data
+
+UIs
+/          | UI using custom css and JS
+/bootstrap | UI made using bootstrap
