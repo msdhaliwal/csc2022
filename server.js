@@ -40,9 +40,7 @@ async function GetCities(req, res) {
 
 async function GetResponseTime(req, res) {
 	try {
-		// const sourceData = await _getSourceData(); // takes 3 seconds
-		const sourceData = require('./resources/sourceData');
-		const processedSourceData = {};
+		const sourceData = await _getSourceData();
 		const promiseArr = [];
 		for (const elem of sourceData) {
 			promiseArr.push(_getResponseTime(elem));

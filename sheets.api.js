@@ -45,12 +45,12 @@ router.get('/update', async (req, res) => {
 module.exports = router;
 
 const _getResponseTimes = () => {
-	return new Promise((resolve, reject) => {
+	return new Promise(async (resolve, reject) => {
 		try {
 			const _date = new Date();
 			const date = _date.toJSON().split('T')[0];
 			const time = `${_date.getHours()}:${_date.getMinutes()}`;
-			const sourceData = require('./resources/sourceData');
+			const sourceData = await _getSourceData();
 			const promiseArr = [];
 			for (const elem of sourceData) {
 				promiseArr.push(_getResponseTime({ ...elem, date, time }));
